@@ -7,5 +7,5 @@
 
 <button (click)="login()">Green Employee Login</button>
 
-<iframe [src]="currentUrl" height="75%" width="75%"></iframe>
+<iframe [src]="currentUrl | safe: 'resourceUrl'" height="75%" width="75%"></iframe>
 

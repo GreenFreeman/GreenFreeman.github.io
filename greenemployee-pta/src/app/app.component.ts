@@ -1,6 +1,5 @@
 import { Component, SecurityContext } from '@angular/core';
 import { SingleSignOnService } from './data/single-sign-on.service';
-import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +9,10 @@ import { DomSanitizer} from '@angular/platform-browser';
 export class AppComponent {
   title = 'app';
   alerts = [];
-  currentUrl = '';
+  currentUrl = 'https://freemanland.greenemployee.com';
 
   constructor(
-    private singleSignOnService: SingleSignOnService,
-    private sanitizer: DomSanitizer) {
+    private singleSignOnService: SingleSignOnService) {
   }
 
   login() {
@@ -31,7 +29,7 @@ export class AppComponent {
                                                    employeeID, targetPortal, ipAddress, userAgent)
         .subscribe(url => {
           console.log(url);
-          this.currentUrl = this.sanitizer.sanitize(SecurityContext.URL, this.sanitizer.bypassSecurityTrustResourceUrl(url));
+          this.currentUrl = url;
         });
   }
 }
