@@ -9,7 +9,7 @@ import { SingleSignOnService } from './data/single-sign-on.service';
 export class AppComponent {
   title = 'app';
   alerts = [];
-  currentUrl = 'https://freemanland.greenemployee.com';
+  currentUrl = 'https://freemanland.greenemployee.com/default.aspx?s=3EE20554-FAD6-446C-BC52-E7BB87DD955C';
 
   constructor(
     private singleSignOnService: SingleSignOnService) {
@@ -19,7 +19,7 @@ export class AppComponent {
     const authKey = '472BB613-FD3D-405F-AB46-4BCCFA9F246D';
     const parentCompanyID = 43277;
     const companyID = 'MFREE';
-    const employeeID = 'EMP0001';
+    const employeeID = 'AFHEW001';
     const targetPortal = 'GreenEmployee';
     const ipAddress = '24.217.186.188';
     // tslint:disable-next-line: max-line-length

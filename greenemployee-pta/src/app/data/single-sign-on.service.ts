@@ -8,7 +8,7 @@ export class SingleSignOnService {
 
   authenticateEmployee3(authKey: string, parentCompanyID: number, companyID: string,
                         employeeID: string, targetPortal: string, ipAddress: string, userAgent: string): Observable<string> {
-    const route = 'https://www.greenshadesonline.com/webservices/singlesignonservice/signonservice.asmx/';
+    const route = 'http://www.greenshades.com/singlesignonservice/AuthenticateEmployee3';
     const params = {
         AuthenticationKey: authKey,
         GSCompanyID: parentCompanyID,
@@ -19,6 +19,6 @@ export class SingleSignOnService {
         UserAgent: userAgent
     };
 
-    return this.http.put<string>(`${route}AuthenticateEmployee3`, JSON.stringify(params));
+    return this.http.put<string>(`${route}`, JSON.stringify(params));
   }
 }
