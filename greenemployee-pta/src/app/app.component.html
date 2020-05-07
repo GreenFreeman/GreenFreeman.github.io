@@ -1,11 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:left">
   <h1>
-    Green Employee Shell
+    Green Employee iFrame Shell
   </h1>
 </div>
 
-<button (click)="login()">Green Employee Login</button>
-
-<iframe [src]="currentUrl | safe: 'resourceUrl'" height="75%" width="75%"></iframe>
+<div>
+  <p>Enter the subdomain:</p>
+  <input #subdomain/>
+</div>
+<div>
+  <p>Enter the session guid:</p>
+  <input #sessionGuid/>
+</div>
+<br>
+<div>
+  <button (click)="login(subdomain.value, sessionGuid.value)">Login</button>
+</div>
+<br>
+<div style="text-align: center; height: 600px;">
+  <iframe [src]="currentUrl | safe: 'resourceUrl'" height="100%" width="75%"></iframe>
+</div>
 
